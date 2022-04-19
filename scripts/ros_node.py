@@ -34,8 +34,8 @@ class Detectron2node(object):
         self.cfg = get_cfg()
         add_deeplab_config(self.cfg)
         add_maskformer2_config(self.cfg)
-        self.cfg.merge_from_file('/home/niklas/catkin_ws/model_config.yaml')
-        self.cfg.MODEL.WEIGHTS = '/home/niklas/catkin_ws/model_weights.pkl'
+        self.cfg.merge_from_file('/home/appuser/mask2former_ws/model_config.yaml')
+        self.cfg.MODEL.WEIGHTS = '/home/appuser/mask2former_ws/model_weights.pkl'
         self.cfg.MODEL.MASK_FORMER.TEST.SEMANTIC_ON = True
         self.cfg.MODEL.MASK_FORMER.TEST.INSTANCE_ON = True
         self.cfg.MODEL.MASK_FORMER.TEST.PANOPTIC_ON = True

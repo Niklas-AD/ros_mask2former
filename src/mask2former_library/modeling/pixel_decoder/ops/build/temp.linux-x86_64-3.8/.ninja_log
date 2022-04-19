@@ -1,0 +1,4 @@
+# ninja log v5
+0	2681	1644260748980000000	/home/niklas/Masterarbeit/Mask2Former/mask2former/modeling/pixel_decoder/ops/build/temp.linux-x86_64-3.8/home/niklas/Masterarbeit/Mask2Former/mask2former/modeling/pixel_decoder/ops/src/cpu/ms_deform_attn_cpu.o	c631d776b99cf844
+0	10530	1644260756820000000	/home/niklas/Masterarbeit/Mask2Former/mask2former/modeling/pixel_decoder/ops/build/temp.linux-x86_64-3.8/home/niklas/Masterarbeit/Mask2Former/mask2former/modeling/pixel_decoder/ops/src/cuda/ms_deform_attn_cuda.o	429665306f23f9aa
+0	14760	1644260761050000000	/home/niklas/Masterarbeit/Mask2Former/mask2former/modeling/pixel_decoder/ops/build/temp.linux-x86_64-3.8/home/niklas/Masterarbeit/Mask2Former/mask2former/modeling/pixel_decoder/ops/src/vision.o	89fabfdc2d502b06

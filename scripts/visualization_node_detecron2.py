@@ -34,8 +34,6 @@ class Detectron2node(object):
         self._image_counter = 0
 
         self.cfg = get_cfg()
-        add_deeplab_config(self.cfg)
-        add_maskformer2_config(self.cfg)
 
         try:
             self.cfg.merge_from_file('/home/appuser/mask2former_ws/model_config.yaml')

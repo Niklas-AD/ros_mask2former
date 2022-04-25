@@ -43,7 +43,7 @@ class Detectron2node(object):
             self.cfg.MODEL.WEIGHTS = '/home/niklas/catkin_ws/model_weights.pkl'
 
         
-        #self.predictor = DefaultPredictor(self.cfg)
+        self.predictor = DefaultPredictor(self.cfg)
         
         
         self._class_names = MetadataCatalog.get("coco_2017_val_panoptic")
@@ -85,14 +85,20 @@ class Detectron2node(object):
                 camera_matrix = np.array(CAMERA_0_K, np.float32).reshape((3, 3))
                 distortion_coeffs = np.array(CAMERA_0_D, np.float32)
                 rectified_img = cv.undistort(np_image, camera_matrix, distortion_coeffs)
-
-                demo = VisualizationDemo(self.cfg)
-                predictions, visualized_output = demo.run_on_image(rectified_img)
+                
+                outputs = self.predictor(rectified_img)
+                result = outputs["instances"].to("cpu")
+                result_msg = self.getResult(result)
+                self._result_pub.publish(result_msg)
+                
+                
+                #demo = VisualizationDemo(self.cfg)
+                #predictions, visualized_output = demo.run_on_image(rectified_img)
                 #rospy.loginfo(predictions)
-                rospy.loginfo(type(visualized_output))
+                #rospy.loginfo(type(visualized_output))
                 # Visualize results
-                image_msg = self._bridge.cv2_to_imgmsg(visualized_output.get_image(), encoding="rgb8")
-                self._vis_pub.publish(image_msg)
+                #image_msg = self._bridge.cv2_to_imgmsg(visualized_output.get_image(), encoding="rgb8")
+                #self._vis_pub.publish(image_msg)
 
             rate.sleep()
 

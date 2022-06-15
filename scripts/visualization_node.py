@@ -39,7 +39,7 @@ class Detectron2node(object):
 
         try:
             self.cfg.merge_from_file('/home/appuser/mask2former_ws/model_config.yaml')
-            self.cfg.MODEL.WEIGHTS = '/home/appuser/mask2former_ws/model_weights.pkl'
+            self.cfg.MODEL.WEIGHTS = '/home/appuser/mask2former_ws/model_weights.pth'
         except:
             self.cfg.merge_from_file('/home/niklas/catkin_ws/model_config.yaml')
             self.cfg.MODEL.WEIGHTS = '/home/niklas/catkin_ws/model_weights.pkl'

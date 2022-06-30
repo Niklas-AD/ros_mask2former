@@ -51,7 +51,7 @@ class Detectron2node(object):
         #self.predictor = DefaultPredictor(self.cfg)
         
         
-        self._class_names = MetadataCatalog.get("coco_2017_val_panoptic")
+        #self._class_names = MetadataCatalog.get("coco_2017_val_panoptic")
 
         self._visualization = self.load_param('~visualization',True)
         self._result_pub = rospy.Publisher('objects', Result, queue_size=1)
